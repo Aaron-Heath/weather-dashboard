@@ -1,0 +1,39 @@
+/* Branding Variables */
+:root{
+    --light: #fbf2c4;
+    --orange: #c7522a;
+    --tan: #e5c185;
+    --green: #74a892;
+    --dgreen: #008585;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+aside {
+    flex:1;
+    border: 2px blue solid;
+}
+
+main {
+    display: flex;
+    flex: 4;
+    border: 2px blue solid;
+}
+
+header{
+    background-color: var(--light);
+    color: var(--green);
+    min-height: 75px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+header h1 {
+    font-size: 60px;
+}
