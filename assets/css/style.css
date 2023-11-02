@@ -43,6 +43,9 @@ body {
     margin-top: 20px;
     height: 50px;
 }
+main {
+    margin:0 auto;
+}
 
 
 
@@ -83,7 +86,7 @@ body {
     cursor: pointer;
 }
 
-main {
+/* main {
     display: flex;
     flex: 4;
     flex-wrap: wrap;
@@ -93,7 +96,7 @@ main {
     width: 80%;
     margin: 30px 10%;
 
-}
+} */
 
 header {
     width: 100%;
