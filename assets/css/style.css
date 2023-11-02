@@ -22,8 +22,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px orange dashed;
+    /* border: 2px orange dashed; */
     padding: 10px;
+    height: 200px;
 }
 
 #content-container {
@@ -31,13 +32,15 @@ body {
     flex-wrap: wrap;
     flex-direction: column;
 
-    border: 2px yellow solid;
+    /* border: 2px yellow solid; */
     width: 900px;
     background-color: rgba(0, 0, 0, 0.7);
     margin-top: 50px;
+    border-radius: 40px;
 }
 
 #form-container {
+    margin-top: 20px;
     height: 50px;
 }
 
