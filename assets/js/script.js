@@ -1,7 +1,8 @@
 // Set Globals
 const geoUrl = "http://api.openweathermap.org/geo/1.0/direct?q={city-name}&limit=1&appid="
-const weatherUrl =  'https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid='
+const weatherUrl =  'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&units=imperial&appid='
 const exclusions = "&exclude=minutely,hourly,alerts"
+const dateFormat = "MMMM D, YYYY" 
 // This would normally be obscured as an environment variable
 const key = "b86517d6f9f09daf180408ee9981a4cc"
 
@@ -69,22 +70,45 @@ $(function () {
         // Clear Active Container
         $activeContainer.html("");
 
-        // Create Header with city name and date
+        // Assign needed data for easier reference
+        var today = dayjs().format(dateFormat);
+        var mainWeather = weatherData.main;
+
+        // Create and append city header
         var $cityName = $("<h2>");
-        var today = dayjs().format("(M/DD/YYYY)");
-
-        // Set attributes
-        $cityName.text(`${cityData.name} ${today}`);
-
-        // Append
+        $cityName.text(cityData.name);
         $activeContainer.append($cityName);
 
+        // Create and append subtitle with date
+        var $dateSubtitle = $("<p>");
+        $dateSubtitle.text(today);
+        $dateSubtitle.addClass("subtitle")
+        $activeContainer.append($dateSubtitle);
 
-        // Create P tag with Temp
+        // Create and append weather icon
+        var $icon = $("<img>")
+        var iconSource = "http://openweathermap.org/img/w/" + weatherData.weather[0].icon + ".png"
+        $icon.attr('src',iconSource);
+        $icon.attr('alt', "Weather Icon");
+        $activeContainer.append($icon);
 
-        // Create P tag with Wind
+        // Create and append Temp
+        var $temp = $('<p>')
+        $temp.text(`Temp: ${weatherData.main.temp} °F`)
+        $activeContainer.append($temp);
 
-        // Create P tag with humidity
+        // Create and append Wind
+        let $wind = $("<p>")
+        $wind.text(`Wind: ${weatherData.wind.speed} MPH`);
+        $wind.addClass("weather-stat");
+        $activeContainer.append($wind);
+        
+        // Create and append Humidity
+        let $humidity = $('<p>');
+        $humidity.text(`Humidity: $${weatherData.main.humidity}%`);
+        $activeContainer.append($humidity);
+
+
     }
 
 });
