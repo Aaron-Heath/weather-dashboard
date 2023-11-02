@@ -4,17 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
+
     <link rel="stylesheet" href="./assets/css/reset.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <header><h1>Weather Dashboard</h1></header>
-    <aside>
-        Aside
-    </aside>
+    <header>
+        <h1>Weather Dashboard</h1>
+    </header>
     <main>
-        Main
+        <section id="content-container">
+            <div id="form-container" class="row">
+                <form>
+                    <input id="city-input" class="form-control col" type="text" placeholder="City Search"><button id="search-btn" class="form-control col" type="submit">Search</button>
+                </form>
+            </div>
+            <div id="active-search" class="row">
+                Recent Search
+            </div>
+            <div id="previous-search" class="row">
+                Previous Searches
+            </div>
+        </section>
+        
+
     </main>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
     <script src="./assets/js/script.js"></script>
 </body>
 </html>

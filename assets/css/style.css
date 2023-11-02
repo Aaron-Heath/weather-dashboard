@@ -9,30 +9,93 @@
 
 body {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
+    background-image: url("../images/pageBackground.jpg"); /* https://www.pexels.com/photo/white-clouds-and-blue-sky-55787/ */
+    background-size: 100%;
+    background-repeat: no-repeat;
+    align-items: start;
+
+    height: 100vh;    
+}
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px orange dashed;
+    padding: 10px;
 }
 
-aside {
-    flex:1;
-    border: 2px blue solid;
+#content-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    border: 2px yellow solid;
+    width: 900px;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-top: 50px;
+}
+
+#form-container {
+    height: 50px;
+}
+
+
+
+#city-input,
+#search-btn {
+    height: 30px;
+    margin: 0;
+    border: none;
+    outline: none;
+}
+
+#city-input {
+    border-radius: 15px 0 0 15px;
+    width: 300px;
+    padding-left: 20px;
+}
+
+#search-btn {
+    border-radius: 0 15px 15px 0;
+    width: 75px;
+    padding-right: 10px;
+
+
+    background-color: var(--orange);
+    color: white;
+    font-weight: 600;
+
+    transition: .2s;
+}
+
+#search-btn:hover {
+    background-color: #e27049;
+    cursor: pointer;
+}
+
+#search-btn:active {
+    background-color: #e64712;
+    cursor: pointer;
 }
 
 main {
     display: flex;
     flex: 4;
+    flex-wrap: wrap;
     border: 2px blue solid;
+
+    justify-content: center;
+    width: 80%;
+    margin: 30px 10%;
+
 }
 
-header{
-    background-color: var(--light);
-    color: var(--green);
-    min-height: 75px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+header {
     width: 100%;
 }
+
 
 header h1 {
     font-size: 60px;
