@@ -18,8 +18,8 @@
     margin-bottom: 20px;
 }
 
-header {
-    padding: 15px 0 0 100px;
+header p {
+    margin: 15px 0 0 100px;
     font-size: 25px;
     /* border: red 2px solid; */
 }
@@ -33,8 +33,22 @@ body {
     background-repeat: no-repeat;
     align-items: start;
 
-    height: 100vh;    
+    min-height: 100vh;    
 }
+main {
+    margin:0 auto;
+}
+
+header {
+    width: 100%;
+}
+
+
+header h1 {
+    font-size: 60px;
+}
+
+/* Class Selectors */
 .row {
     display: flex;
     flex-direction: column;
@@ -42,11 +56,59 @@ body {
     align-items: center;
     /* border: 2px orange dashed; */
     padding: 10px;
-    height: 200px;
+    max-height: 250px;
 }
 
 .light {
     color: white;
+}
+
+.row.light {
+    min-height: 200px;
+    max-height: 275px;
+}
+
+.forecast-card {
+    /* border: red 2px dashed; */
+    display: flex;
+    align-items:center;
+    margin: 5px 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding-left: 15px;
+}
+
+.forecast-card img,
+.forecast-date,
+.forecast-temp {
+    margin-right: 15px;
+}
+
+.forecast-date {
+    text-align: left;
+    min-width: 43px;
+}
+
+.forecast-day {
+    font-size: 20px;
+    /* font-weight: bold; */
+}
+
+.forecast-monthday {
+    color: #cccccc;
+}
+
+.forecast-temp {
+    font-size: 30px;
+}
+
+.forecast-temp::after {
+    content: "F";
+    font-size: 15px;
+    color: #cccccc;
+}
+
+.supp-weather {
+    font-size: 14px;
 }
 
 #content-container {
@@ -65,9 +127,7 @@ body {
     margin-top: 20px;
     height: 50px;
 }
-main {
-    margin:0 auto;
-}
+
 
 
 
@@ -114,8 +174,8 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: left;
-    align-items: start;
-    border: red 2px solid;
+    align-items: center;
+    /* border: red 2px solid; */
 
 }
 
@@ -127,18 +187,10 @@ main {
 
 #forecast {
     flex: 1;
-    border: blue 2px solid;
+    /* border: blue 2px solid; */
 }
 
 .weather-stat {
     margin-bottom: 10px;
 }
 
-header {
-    width: 100%;
-}
-
-
-header h1 {
-    font-size: 60px;
-}
