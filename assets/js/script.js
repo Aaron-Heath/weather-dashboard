@@ -8,6 +8,12 @@ const forecastFormat = "ddd M/D"
 // This would normally be obscured as an environment variable
 const key = "b86517d6f9f09daf180408ee9981a4cc"
 
+const storageKey = "weatherSearches"
+var previousSearches = JSON.parse(localStorage.getItem(storageKey));
+if(previousSearches === null) {
+    previousSearches = [];
+}
+
 
 
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
@@ -32,6 +38,43 @@ $(function () {
         geoFetch(city);
 
     })
+
+    // Create Event Listener for Previous Searches
+    $previousContainer.on("click","button", function(event) {
+        let $target = $(event.target);
+        // console.log($target.attr('id'));
+        geoFetch($target.attr('id'));
+    })
+
+    function storeSearch(newSearch) {
+        if(previousSearches.length > 0) {
+            for (let search of previousSearches) {
+                if (search.city === newSearch.city) {
+                    return;
+                }
+            }
+        }
+
+        previousSearches.push(newSearch);
+        // Save to Local Storage
+        localStorage.setItem(storageKey, JSON.stringify(previousSearches));
+    }
+
+    // Render Previous Searches
+    function renderPrevious() {
+        if(previousSearches.length <= 0) {
+            return;
+        }
+
+        $previousContainer.html("")
+        for(search of previousSearches) {
+            let $searchCard = $("<button>");
+            $searchCard.attr("class","previous-search");
+            $searchCard.attr("id", search.city);
+            $searchCard.text(search.city);
+            $searchCard.appendTo($previousContainer);
+        }
+    }
 
     function geoFetch(city) {
         // Bulid fetch url
@@ -161,12 +204,17 @@ $(function () {
 
 
 
-            $forecastContainer.append($forecastCard)
-
-
-
-
+            $forecastContainer.append($forecastCard);
         }
+
+        // Render previous searches BEFORE adding most recent search
+        renderPrevious();
+        // Add to previous search
+        storeSearch(
+            {
+                city: cityData.name,
+                temp: `${Math.round(weatherData.list[0].main.temp)}°F`
+            });
     }
 
 
