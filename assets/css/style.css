@@ -29,7 +29,8 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     background-image: url("../images/pageBackground.jpg"); /* https://www.pexels.com/photo/white-clouds-and-blue-sky-55787/ */
-    background-size: 100%;
+    background-position: center;
+    background-size: 150%;
     background-repeat: no-repeat;
     align-items: start;
 
