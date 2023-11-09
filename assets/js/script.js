@@ -1,7 +1,7 @@
 // Set Globals
-const geoUrl = "https://api.openweathermap.org/geo/1.0/direct?q={city-name}&limit=1&appid="
-const weatherUrl =  'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&units=imperial&appid='
-const forecastUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&units=imperial&appid='
+const geoUrl = "http://api.openweathermap.org/geo/1.0/direct?q={city-name}&limit=1&appid="
+const weatherUrl =  'http://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&units=imperial&appid='
+const forecastUrl = 'http://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&units=imperial&appid='
 const exclusions = "&exclude=minutely,hourly,alerts"
 const todayFormat = "MMMM D, YYYY"
 const forecastFormat = "ddd M/D"
