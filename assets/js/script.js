@@ -156,7 +156,7 @@ $(function () {
         $activeContainer.append($humidity);
 
         // Loop for forecast cards
-        for(let i = 8; i < weatherData.list.length; i+=8) {
+        for(let i = 0; i < weatherData.list.length; i+=8) {
             
             // Get this iteration's weather data for ease of access
             let iterWeather = weatherData.list[i];
